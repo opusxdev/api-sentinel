@@ -1,0 +1,21 @@
+module.exports = {
+  HTTP_METHODS: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD'],
+  STATUS_CODES: {
+    SUCCESS: [200, 201, 202, 204],
+    REDIRECT: [301, 302, 304],
+    CLIENT_ERROR: [400, 401, 403, 404],
+    SERVER_ERROR: [500, 502, 503, 504]
+  },
+  PERFORMANCE_THRESHOLDS: {
+    EXCELLENT: 200,
+    GOOD: 500,
+    FAIR: 1000,
+    POOR: 2000,
+    CRITICAL: 5000
+  },
+  CHECK_INTERVALS: {
+    MIN: 1,
+    MAX: 60,
+    DEFAULT: 5
+  }
+};
