@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useStore } from '../store/store';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
@@ -17,7 +18,10 @@ client.interceptors.response.use(
   response => response,
   error => {
     if (error.response?.status === 401) {
-      localStorage.clear();
+      // Clear store state
+      const { logout } = useStore.getState();
+      logout();
+      // Redirect to login
       window.location.href = '/login';
     }
     return Promise.reject(error);
